@@ -1,7 +1,7 @@
 function changeMe(arr) {
     var hasil = []
     for (i=0; i<arr.length; i++){
-        hasil.push(((i+1) + ' ' + arr[i][0] + ' ' + arr[i][1] + ':'));
+        hasil.push(((i+1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':'));
         var data = {
             firstName: arr[i][0],
             lastName: arr[i][1],
