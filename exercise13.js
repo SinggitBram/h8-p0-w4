@@ -1,10 +1,15 @@
 function deepSum (arr) {
     var jumlah = 0
-    for (var i=0; i>arr.length; i++)
-        {jumlah += arr[i]
-        for (var j=0; j>arr[i].length; j++)
-        jumlah += arr[i][j]
+    for (var i=0; i<arr.length; i++){
+        
+        for (var j=0; j<arr[i].length; j++){
+            
+            for(var k=0; k<arr[i][j].length; k++){
+                jumlah += (arr[i][j][k])
+            }
+        }
     }
+    return jumlah
   }
   
   //TEST CASE
