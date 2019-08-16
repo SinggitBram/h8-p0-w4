@@ -1,7 +1,7 @@
 function changeMe(arr) {
     var hasil = []
     for (i=0; i<arr.length; i++){
-        hasil.push(((i+1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':'));
+        console.log(((i+1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':'));
         var data = {
             firstName: arr[i][0],
             lastName: arr[i][1],
@@ -11,9 +11,9 @@ function changeMe(arr) {
         if (arr[i][3] === undefined || arr[i][3] > 2019){
             data.age = 'invalid birth year'
         }
-        hasil.push(data)
+        // hasil.push(data)
+        console.log(data)
     }
-console.log(hasil)
 }
   
   // TEST CASES

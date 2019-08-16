@@ -12,11 +12,11 @@ function digitPerkalianMinimum(angka) {
       if (hasilKali === angka) {
         faktorAngka = String(i) + String(j);
         arr.push(faktorAngka);
-        arrSlice = arr.slice(Math.round(arr.length/2-1),Math.round(arr.length/2));
-        digit = arrSlice[0];
       }
     }
   }
+  arrSlice = arr.slice(Math.round(arr.length/2-1),Math.round(arr.length/2));
+  digit = arrSlice[0];
   return digit.length
 }
   
