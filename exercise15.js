@@ -1,16 +1,15 @@
-function highestScore (students) {
+function highestScore(students) {
     hasil = {}
-    for (i=0; i<students.length; i++){
+    for (i = 0; i < students.length; i++) {
         var nama = students[i].name
         var skor = students[i].score
         var kelas = students[i].class
-        if(!hasil[kelas]){
+        if (!hasil[kelas]) {
             hasil[kelas] = {
                 name: nama,
                 score: skor
             }
-        }    
-        else if(skor > hasil[kelas].score){
+        } else if (skor > hasil[kelas].score) {
             hasil[kelas] = {
                 nama: nama,
                 score: skor

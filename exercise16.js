@@ -1,21 +1,16 @@
 function graduates (students) {
-    var hasil= {}
-    for(var i=0; i<students.length; i++){
-        var nama = students[i].name
-        var skor = students[i].score
-        var kelas = students[i].class
-        if (skor > 75){
-            if(!hasil[kelas]){
-                hasil[kelas] = []
-            }
-            hasil[kelas].push({
-                name: nama,
-                score: skor
-                })
-            }
-        }
-        return hasil    
-    }
+  var kelompok = {}
+  for(var i = 0 ; i<students.length; i++){
+      if(students[i].score > 75){
+          if(!kelompok[students[i].class]){
+              kelompok[students[i].class] = []               
+          }
+          kelompok[students[i].class].push({'name' : students[i].name, 'score' : students[i].score
+          })
+      }
+  }
+  return kelompok
+}
     
   
 
