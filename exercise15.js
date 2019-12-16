@@ -1,24 +1,42 @@
 function highestScore(students) {
-    hasil = {}
-    for (i = 0; i < students.length; i++) {
-        var nama = students[i].name
-        var skor = students[i].score
-        var kelas = students[i].class
-        if (!hasil[kelas]) {
-            hasil[kelas] = {
-                name: nama,
-                score: skor
-            }
-        } else if (skor > hasil[kelas].score) {
-            hasil[kelas] = {
-                nama: nama,
-                score: skor
-            }
-        }
+
+  let obj = {}
+  for (let i = 0; i < students.length; i++) {
+      if (!obj[students[i].class]) {
+          obj[students[i].class] = {
+              'name': students[i].name,
+              'score': students[i].score
+          }
+      }
+  }
+
+  for (let key in obj) {
+    for (let j = 0; j< students.length; j++){
+      if (key === students[j].class && obj[key].score < students[j].score) {
+          obj[key].name = students[j].name
+          obj[key].score = students[j].score
+      }
     }
-    return hasil
+  }
+  return obj
 }
-  
+//   for(let i = 0; i < students.length; i++) {
+//     if(!obj[students[i].class]) {
+//       obj[students[i].class] = {
+//         name: '',
+//         score: 0
+//       }
+//     }
+//     if(students[i].score > obj[students[i].class].score) {
+//       obj[students[i].class] = {
+//         name: students[i].name,
+//         score: students[i].score
+//       }
+//     }
+//   }
+//   return obj
+// }
+    
   // TEST CASE
   console.log(highestScore([
     {

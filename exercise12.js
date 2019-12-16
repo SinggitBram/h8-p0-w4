@@ -1,27 +1,48 @@
 function countProfit(shoppers) {
-    var listBarang = [ ['Sepatu Stacattu', 1500000, 10],
-                       ['Baju Zoro', 500000, 2],
-                       ['Sweater Uniklooh', 175000, 1]
-                     ];
-    var result = []
-    for (var i = 0; i < listBarang.length; i++){
-        var data = {
-            product : listBarang[i][0],
-            shoppers : [],
-            leftOver : listBarang[i][2],
+    let listBarang = [
+        [
+            'Sepatu Stacattu', 1500000, 10
+        ],
+        [
+            'Baju Zoro', 500000, 2
+        ],
+        [
+            'Sweater Uniklooh', 175000, 1
+        ]
+    ];
+    let hasil = []
+    for (let k = 0; k < listBarang.length; k++) {
+        let obj = {
+            product: listBarang[k][0],
+            shoppers: [],
+            leftOver: listBarang[k][2],
             totalProfit: 0
         }
-        for (var j = 0; j < shoppers.length; j++) {
-            if (data.product === shoppers[j].product && data.leftOver >= shoppers[j].amount) {
-              data.shoppers.push(shoppers[j].name)
-              data.leftOver -= shoppers[j].amount
-              data.totalProfit = data.totalProfit + (listBarang[i][1] * shoppers[j].amount)
+        hasil.push(obj)
+    }
+
+    if (shoppers.length === 0) {
+        return []
+    }
+
+    for (let i = 0; i < shoppers.length; i++) {
+        for (let j = 0; j < hasil.length; j++) {
+            if (shoppers[i].product === hasil[j].product && shoppers[i].amount <= hasil[j].leftOver) {
+                hasil[j]['shoppers'].push(shoppers[i].name)
+                hasil[j]['leftOver'] -= shoppers[i].amount
+                if (shoppers[i].product === 'Sepatu Stacattu') {
+                    hasil[j]['totalProfit'] += (shoppers[i].amount * 1500000)
+                } else if (shoppers[i].product === 'Baju Zoro') {
+                    hasil[j]['totalProfit'] += (shoppers[i].amount * 500000)
+                } else if (shoppers[i].product === 'Sweater Uniklooh') {
+                    hasil[j]['totalProfit'] += (shoppers[i].amount * 175000)
+                }
             }
         }
-        result.push(data)
     }
-return result
+    return hasil
 }
+
   
   // TEST CASES
   console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 2}, 

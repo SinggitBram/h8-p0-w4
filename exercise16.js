@@ -1,18 +1,20 @@
-function graduates (students) {
-  var kelompok = {}
-  for(var i = 0 ; i<students.length; i++){
-      if(students[i].score > 75){
-          if(!kelompok[students[i].class]){
-              kelompok[students[i].class] = []               
-          }
-          kelompok[students[i].class].push({'name' : students[i].name, 'score' : students[i].score
-          })
-      }
-  }
-  return kelompok
-}
+function graduates(students) {
+    let obj = {}
     
-  
+    for (let i = 0; i < students.length; i++) {
+        if (!obj[students[i].class] && students[i].score > 75) {
+            obj[students[i].class] = []
+            obj[students[i].class].push(
+                {'name': students[i].name, 'score': students[i].score}
+            )
+        } else if (students[i].score > 75) {
+            obj[students[i].class].push(
+                {'name': students[i].name, 'score': students[i].score}
+            )
+        }
+    }
+    return obj
+}
 
   console.log(graduates([
     {
