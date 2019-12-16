@@ -1,14 +1,14 @@
 function urutkanAbjad(str) {
-    var abjad = 'abcdefghijklmnopqrstuvwxyz'
-    var baru = ''
+    let abjad = 'abcdefghijklmnopqrstuvwxyz'
+    let hasil = ''
     for (var i = 0; i < abjad.length; i++) {
         for (var j = 0; j < str.length; j++) {
             if (str[j] === abjad[i]) {
-                baru += str[j]
+                hasil += str[j]
             }
         }
     }
-    return baru
+    return hasil
 }
   // TEST CASES
   console.log(urutkanAbjad('hello')); // 'ehllo'

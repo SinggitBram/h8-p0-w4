@@ -1,14 +1,15 @@
 function tukarBesarKecil(kalimat) {
-    var pembalikan = ''
-    for(var i=0; i<kalimat.length; i++){
-        if (kalimat[i] === kalimat[i].toLowerCase()){
-            pembalikan = pembalikan + kalimat[i].toUpperCase()
-        }
-        else if (kalimat[i] === kalimat[i].toUpperCase()){
-            pembalikan = pembalikan + kalimat[i].toLowerCase()
+    let hasil = ''
+    for (let i = 0; i < kalimat.length; i++) {
+        if (kalimat[i] === kalimat[i].toUpperCase()) {
+            hasil = hasil + kalimat[i].toLowerCase()
+        } else if (kalimat[i] === kalimat[i].toLowerCase()) {
+            hasil = hasil + kalimat[i].toUpperCase()
+        } else {
+            hasil = hasil + kalimat[i]
         }
     }
-    return pembalikan
+    return hasil
 }
   // TEST CASES
   console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"

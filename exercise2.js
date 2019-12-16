@@ -1,12 +1,9 @@
 function fpb(angka1, angka2) {
-    var hasilfpb = ''
-
-    for (var i= 1; i<angka1; i++) {
-        if (angka1 % i === 0 && angka2 % i === 0){
-            hasilfpb = i
+    for (let i = angka1; i > 0; i--) {
+        if (angka1 % i === 0 && angka2 % i === 0) {
+            return i
         }
     }
-    return hasilfpb
 }
   
   console.log(fpb(12, 16)); // 4

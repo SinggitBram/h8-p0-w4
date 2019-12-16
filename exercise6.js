@@ -1,23 +1,14 @@
 function digitPerkalianMinimum(angka) {
-  // you can only write your code here!
-  var hasilKali = 0;
-  var faktorAngka;
-  var arr = [];
-  var arrSlice= [];
-  var digit = '';
-  
-  for(var i = 0; i <= angka; i ++) {
-    for(var j = 0; j <= angka; j ++) {
-      hasilKali = i*j;
-      if (hasilKali === angka) {
-        faktorAngka = String(i) + String(j);
-        arr.push(faktorAngka);
-      }
+
+    let hasil = []
+    for (let i = 1; i <= angka; i++) {
+        for (let j = 1; j <= angka; j++) {
+            if (i * j === angka) {
+                hasil.push([i, j])
+            }
+        }
     }
-  }
-  arrSlice = arr.slice(Math.round(arr.length/2-1),Math.round(arr.length/2));
-  digit = arrSlice[0];
-  return digit.length
+    return (hasil[Math.floor(hasil.length/2)][0].toString() + hasil[Math.floor(hasil.length/2)][1].toString()).length
 }
   
   // TEST CASES

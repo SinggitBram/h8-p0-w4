@@ -1,18 +1,19 @@
 function changeMe(arr) {
-    var hasil = []
-    for (i=0; i<arr.length; i++){
-        console.log(((i+1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':'));
-        var data = {
-            firstName: arr[i][0],
-            lastName: arr[i][1],
-            gender: arr[i][2],
-            age: 2019 - arr[i][3]
+    if (arr[0] === undefined) {
+        return ""
+    }
+    let obj = {}
+    for (let i = 0; i < arr.length; i++) {
+        console.log((i + 1) + '. ' + arr[i][0] + ' ' + arr[i][1] + ':');
+        obj['firstName'] = arr[i][0]
+        obj['lastName'] = arr[i][1]
+        obj['gender'] = arr[i][2]
+        if (!arr[i][3] || arr[i][3] > 2019) {
+            obj['age'] = 'Invalid Birth Year'
+        } else {
+            obj['age'] = 2019 - arr[i][3]
         }
-        if (arr[i][3] === undefined || arr[i][3] > 2019){
-            data.age = 'invalid birth year'
-        }
-        // hasil.push(data)
-        console.log(data)
+        console.log(obj)
     }
 }
   

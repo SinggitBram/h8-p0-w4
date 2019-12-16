@@ -1,14 +1,10 @@
 function cariMedian(arr) {
-    var tengahIndex = arr.length / 2
-    angkaMedian = 0
-    if (arr.length % 2 === 0){
-        angkaMedian = (arr[tengahIndex] + arr[tengahIndex - 1]) / 2
+    if (arr.length % 2 !== 0) {
+        return arr[(arr.length / 2) - 0.5]
+    } else {
+        return ((arr[(arr.length / 2)] + arr[(arr.length / 2) - 1])) / 2
     }
-    else {
-        angkaMedian = arr[tengahIndex - 0.5]
-    }
-    return angkaMedian
-  }
+}
   
   // TEST CASES
   console.log(cariMedian([1, 2, 3, 4, 5])); // 3
